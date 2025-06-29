@@ -1,10 +1,12 @@
 {
   "name": "@angeloevangelista/cloud-shell-session",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "cloud-shell-session": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
