@@ -30,9 +30,9 @@ async function getAWSCredentials() {
       )
       .join("; ");
 
-    clipboardy.writeSync(exportString);
-
     console.log(exportString);
+
+    clipboardy.writeSync(exportString);
   } catch (error) {
     console.error("Error fetching AWS credentials:", error.message);
   }
