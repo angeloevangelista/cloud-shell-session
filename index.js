@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import axios from "axios";
-import clipboardy from "clipboardy";
+// import clipboardy from "clipboardy";
 
 async function getAWSCredentials() {
   try {
@@ -15,6 +15,7 @@ async function getAWSCredentials() {
     );
 
     const variablesToExport = {
+      AWS_DEFAULT_REGION: process.env.AWS_DEFAULT_REGION,
       AWS_ACCESS_KEY_ID: credentials.AccessKeyId,
       AWS_SECRET_ACCESS_KEY: credentials.SecretAccessKey,
       AWS_SESSION_TOKEN: credentials.Token,
@@ -32,7 +33,7 @@ async function getAWSCredentials() {
 
     console.log(exportString);
 
-    clipboardy.writeSync(exportString);
+    // clipboardy.writeSync(exportString);
   } catch (error) {
     console.error("Error fetching AWS credentials:", error.message);
   }
